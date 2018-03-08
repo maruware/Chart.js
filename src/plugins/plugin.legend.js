@@ -510,6 +510,13 @@ var Legend = Element.extend({
 					}
 				}
 			}
+
+			if (!changed) {
+				if (opts.onHoverOut) {
+					opts.onHoverOut.call(me, e.native);
+					changed = true;
+				}
+			}
 		}
 
 		return changed;
